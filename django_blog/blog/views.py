@@ -2,6 +2,12 @@ from django.db.models import Q
 from django.views.generic import ListView
 from .models import Post
 
+from .views import PostSearchView
+
+urlpatterns += [
+    path('search/', PostSearchView.as_view(), name='post-search'),
+]
+
 class PostSearchView(ListView):
     model = Post
     template_name = 'blog/search_results.html'

@@ -1,18 +1,16 @@
 from django import forms
-from .models import Post, Tag
+from .models import Post, Comment
 from taggit.forms import TagWidget
-from .models import Post
-from django import forms
-
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', 'tags']  # include tags
+        fields = ['title', 'content', 'tags']
         widgets = {
-            'tags': TagWidget(),  # This makes the tags input work correctly
+            'tags': TagWidget(),
         }
 
+class CommentForm(forms.ModelForm):
     class Meta:
-        model = Post
-        fields = ['title', 'content', 'tags']
+        model = Comment
+        fields = ['content']

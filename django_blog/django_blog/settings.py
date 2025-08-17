@@ -14,11 +14,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',   # ✅ register our app
-      # Your apps
+     # Django default apps...
     'blog',
-
-    # Third-party apps
     'taggit',  # <-- Add this line
 ]
 

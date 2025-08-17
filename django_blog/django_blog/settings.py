@@ -15,6 +15,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',   # ✅ register our app
+      # Your apps
+    'blog',
+
+    # Third-party apps
+    'taggit',  # <-- Add this line
 ]
 
 MIDDLEWARE = [

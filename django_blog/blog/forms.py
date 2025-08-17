@@ -6,11 +6,12 @@ from django import forms
 
 
 class PostForm(forms.ModelForm):
-    tags = forms.ModelMultipleChoiceField(
-        queryset=Tag.objects.all(),
-        required=False,
-        widget=forms.CheckboxSelectMultiple
-    )
+    class Meta:
+        model = Post
+        fields = ['title', 'content', 'tags']  # include tags
+        widgets = {
+            'tags': TagWidget(),  # This makes the tags input work correctly
+        }
 
     class Meta:
         model = Post

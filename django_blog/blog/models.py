@@ -16,6 +16,8 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
 
+    tags = TaggableManager()  # <-- Add this line
+
     def __str__(self):
         return self.title
 
